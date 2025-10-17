@@ -17,7 +17,7 @@ export default function InnovationRadar() {
 	];
 
 	return (
-		<div className="w-full max-w-2xl mx-auto p-8 bg-white rounded-lg">
+		<div className="w-full max-w-2xl mx-auto p-8 bg-white rounded-lg relative ">
 			<svg
 				viewBox="0 0 400 400"
 				className="w-full h-auto"
@@ -96,7 +96,7 @@ export default function InnovationRadar() {
 			</svg>
 
 			{/* Labels outside the chart */}
-			<div className="relative -mt-8">
+			<div className="-mt-8">
 				<div className="absolute left-0 top-0">
 					<p className="text-lg font-bold text-blue-800 uppercase tracking-wide">
 						Product
