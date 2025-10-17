@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function SurveyIntroduction() {
+export default function ProductSurveyIntroduction() {
 	const [productName, setProductName] = useState("");
 	const [projectReference, setProjectReference] = useState("");
 
