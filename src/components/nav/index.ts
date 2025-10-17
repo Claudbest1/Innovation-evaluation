@@ -1,6 +1,6 @@
 import routesPath from "../../routes/routesPath";
 
-const { HOME, FORM } = routesPath;
+const { HOME, PRODUCTFORM, PROCESSFORM } = routesPath;
 
 export const navLinks = [
 	{
@@ -11,7 +11,12 @@ export const navLinks = [
 	},
 	{
 		id: 2,
-		title: "form",
-		path: FORM,
+		title: "Product form",
+		path: PRODUCTFORM,
+	},
+	{
+		id: 3,
+		title: "Process form",
+		path: PROCESSFORM,
 	},
 ];

@@ -1,11 +1,12 @@
-import { Route, Routes } from "react-router-dom";
 import ScrollToTop from "@/components/ScrollToTop";
 import TopNav from "@/components/nav/TopNav";
-import SurveyForm from "@/pages/SurveyForm";
-import routesPath from "./routesPath";
 import Home from "@/pages/Home";
+import ProcessSurveyForm from "@/pages/survey-form-process";
+import ProductSurveyForm from "@/pages/survey-form-product";
+import { Route, Routes } from "react-router-dom";
+import routesPath from "./routesPath";
 
-const { HOME, FORM } = routesPath;
+const { HOME, PRODUCTFORM, PROCESSFORM } = routesPath;
 
 const AppRoute = () => {
 	return (
@@ -14,7 +15,8 @@ const AppRoute = () => {
 			<TopNav /> {/* Always rendered on all pages */}
 			<Routes>
 				<Route path={HOME} element={<Home />} />
-				<Route path={FORM} element={<SurveyForm />} />
+				<Route path={PRODUCTFORM} element={<ProductSurveyForm />} />
+				<Route path={PROCESSFORM} element={<ProcessSurveyForm />} />
 				{/* Fallback route (optional) */}
 				<Route path="*" element={<Home />} />
 			</Routes>
