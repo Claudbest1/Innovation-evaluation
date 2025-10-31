@@ -40,7 +40,7 @@ interface FormData {
 }
 
 const ProcessSurveyForm = () => {
-	const [processSurveyData] = useState({});
+	const [processSurveyData, setProcessSurveyData] = useState({});
 	const [submitting, setSubmitting] = useState(false);
 	const [, setSuccess] = useState(false);
 	const [formData, setFormData] = useState<FormData>({
@@ -92,7 +92,12 @@ const ProcessSurveyForm = () => {
 
 	return (
 		<div className="py-12 px-6 md:px-36">
-			<ProcessSurveyIntroduction />
+			<ProcessSurveyIntroduction
+				handleChange={(data) => {
+					console.log(data);
+					setProcessSurveyData({ ...data, ...processSurveyData });
+				}}
+			/>
 			<Card className="w-full">
 				<CardHeader>
 					{/* <CardTitle className="text-2xl">Novelty of the process</CardTitle> */}

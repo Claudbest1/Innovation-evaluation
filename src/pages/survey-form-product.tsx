@@ -30,7 +30,7 @@ interface FormData {
 }
 
 const ProductSurveyForm = () => {
-	const [productSurveyData] = useState({});
+	const [productSurveyData, setProductSurveyData] = useState({});
 
 	const [submitting, setSubmitting] = useState(false);
 	const [, setSuccess] = useState(false);
@@ -207,7 +207,12 @@ const ProductSurveyForm = () => {
 
 	return (
 		<div className="py-12 px-6 md:px-36">
-			<ProductSurveyIntroduction />
+			<ProductSurveyIntroduction
+				handleChange={(data) => {
+					console.log(data);
+					setProductSurveyData({ ...productSurveyData, ...data });
+				}}
+			/>
 			<Card className="w-full">
 				<CardHeader>
 					{/* <CardTitle className="text-2xl">Novelty of the Product</CardTitle> */}

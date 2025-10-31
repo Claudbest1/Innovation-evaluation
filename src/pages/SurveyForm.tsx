@@ -8,10 +8,10 @@ import ProductSurveyIntroduction from "./survey-introduction-product";
 const SurveyForm = () => {
 	return (
 		<div className="py-12 px-6 md:px-36">
-			<ProductSurveyIntroduction />
+			<ProductSurveyIntroduction handleChange={() => {}} />
 			<ProductSurveyForm />
 
-			<ProcessSurveyIntroduction />
+			<ProcessSurveyIntroduction handleChange={() => {}} />
 			<ProcessSurveyForm />
 		</div>
 	);

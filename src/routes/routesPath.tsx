@@ -1,5 +1,5 @@
 const routesPath = {
-	HOME: "/",
+	// HOME: "/",
 	PRODUCTFORM: "/survey-form",
 	PROCESSFORM: "/survey-form-process",
 };

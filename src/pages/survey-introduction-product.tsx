@@ -1,10 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function ProductSurveyIntroduction() {
+export default function ProductSurveyIntroduction({
+	handleChange,
+}: {
+	handleChange: (data: {
+		productName: string;
+		projectReference: string;
+	}) => void;
+}) {
 	const [productName, setProductName] = useState("");
 	const [projectReference, setProjectReference] = useState("");
+
+	useEffect(() => {
+		handleChange({ productName, projectReference });
+	}, [productName, projectReference]);
 
 	return (
 		<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 space-y-6 my-20">

@@ -1,10 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-export default function ProcessSurveyIntroduction() {
-	const [productName, setProductName] = useState("");
+export default function ProcessSurveyIntroduction({
+	handleChange,
+}: {
+	handleChange: (data: {
+		processName: string;
+		projectReference: string;
+	}) => void;
+}) {
+	const [processName, setProcessName] = useState("");
 	const [projectReference, setProjectReference] = useState("");
+
+	useEffect(() => {
+		handleChange({ processName, projectReference });
+	}, [processName, projectReference]);
 
 	return (
 		<div className="bg-white rounded-lg shadow-sm border border-gray-200 p-8 space-y-6 my-20">
@@ -41,8 +52,8 @@ export default function ProcessSurveyIntroduction() {
 							<input
 								type="text"
 								id="processName"
-								value={productName}
-								onChange={(e) => setProductName(e.target.value)}
+								value={processName}
+								onChange={(e) => setProcessName(e.target.value)}
 								className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors"
 								placeholder="Enter process name"
 							/>
